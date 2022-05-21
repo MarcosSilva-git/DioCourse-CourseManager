@@ -4,7 +4,6 @@
   <div class="col-sm-10">
     <input [(ngModel)]="filter" class="form-control" />
   </div>
-
 </div>
 
 <table class="table table-striped" >
@@ -12,32 +11,28 @@
     <tr>
       <th>Image</th>
       <th>Name</th>
-      <th>Price</th>
-      <th>Code</th>
-      <th>Duration</th>
-      <th>Release Date</th>
-      <th>Ration</th>
-      <th>Options</th>
-      <th>Delete</th>
+      <th>Gendle</th>
+      <th>Email</th>
+      <th>Age</th>
     </tr>
   </thead>
+
   <tbody>
-    <tr *ngFor="let course of filtedCourses">
-      <td><img [src]='course.imageUrl' width="40px" heigth="40px" /></td>
-      <td>{{ course.name }}</td>
-      <td>{{ course.price }}</td>
-      <td>{{ course.code | replace: '-': ' ' }}</td>
-      <td>{{ course.duration }}</td>
-      <td>{{ course.releaseDate | lowercase  }}</td>
+    <tr *ngFor="let user of filtedUsers">
       <td>
-        <app-star [rating]="course.rating" ></app-star>
+        <img class="rounded" [src]="user.picture.thumbnail">
       </td>
-      <td>
+      <td>{{ user.name.first }}</td>
+      <td>{{ user.gender }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.dob.age }}</td>
+
+      <!-- <td>
         <a [routerLink]="['/course/info', course.id]" class="btn btn-outline-primary">Edit</a>
       </td>
       <td>
         <button (click)="deleteById(course.id)" class="btn btn-danger fa fa-trash" ></button>
-      </td>
+      </td> -->
     </tr>
   </tbody>
 

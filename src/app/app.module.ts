@@ -7,21 +7,21 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 
-import { CourseListComponent } from './courses/course-list.component';
+import { UserListComponent } from './users/user-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ReplacePipe } from './pipe/replace.pipe';
 import { starComponent } from './star/star.component';
 import { Error404Component } from './error-404/error-404.component';
-import { CourseInfoComponent } from './courses/course-info.component';
+//import { UserInfoComponent } from './users/user-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseListComponent,
+    UserListComponent,
     starComponent,
     ReplacePipe,
     NavBarComponent,
-    CourseInfoComponent
+    // UserInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -32,11 +32,11 @@ import { CourseInfoComponent } from './courses/course-info.component';
         path: '', redirectTo: 'courses', pathMatch: 'full'
       },
       {
-        path: 'courses', component: CourseListComponent
+        path: 'courses', component: UserListComponent
       },
-      {
-        path: 'course/info/:id', component: CourseInfoComponent
-      },
+      // {
+      //   path: 'course/info/:id', component: CourseInfoComponent
+      // },
       {
         path: '**', component: Error404Component
       },
